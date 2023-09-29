@@ -1,16 +1,8 @@
-"""
-app name : kidszoo
-name : vishnu raj
-"""
-
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import StudentDatas
 
 def home(request): 
-    """
-    documentation comment
-    """
     mydata=StudentDatas.objects.all()  # inline comment
     if(mydata!=''):
         return render(request,'home.html',{'StudentDatas':mydata})   
@@ -59,18 +51,3 @@ def DeleteData(request,id):
     mydata = StudentDatas.objects.get(id=id)
     mydata.delete()
     return redirect('home')
-
-# test cases
-# exception handling
-# message('success', 'warning')
-# git repository
-# proper namming convention
-# PEP8 standards
-# comments
-# class based view
-# email service
-# access google drive
-# rest Api
-# store files('image', 'csv')
-# Debugging
-# json and 
