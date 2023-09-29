@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import StudentDatas
 
 def home(request): 
-    mydata=StudentDatas.objects.all()  # inline comment
+    mydata=StudentDatas.objects.all()
     if(mydata!=''):
         return render(request,'home.html',{'StudentDatas':mydata})   
     else:  
@@ -46,8 +46,7 @@ def UpdateData(request,id):
         return redirect('home')
     return render(request,'update.html',{'data':mydata})
 
-def DeleteData(request,id): 
-    # need to change : variable name 
+def DeleteData(request,id):  
     mydata = StudentDatas.objects.get(id=id)
     mydata.delete()
     return redirect('home')
