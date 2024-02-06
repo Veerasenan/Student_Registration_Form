@@ -25,3 +25,6 @@ urlpatterns = [
     path('UpdateData/<int:id>',views.UpdateData,name="UpdateData"),
     path('DeleteData/<int:id>',views.DeleteData,name="DeleteData")
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
